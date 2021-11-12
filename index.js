@@ -1,19 +1,22 @@
-require('dotenv').config();
+// require('dotenv').config();
 
 var express = require('express');
-var redis = require('redis');
 var app = express();
-
+/*
+var redis = require('redis');
 const redisClient = redis.createClient({
-  host: process.env.REDIS_HOST,
-  port: process.env.REDIS_PORT
-});
+  host: 'localhost', // process.env.REDIS_HOST,
+  port: 6379, // process.env.REDIS_PORT
+});*/
+
+// console.log(`Using redis on port ${process.env.REDIS_PORT}`);
 
 app.get('/', function(req, res) {
   console.log("New request GET to /");
   res.send('Hola Mundo!');
 });
 
+/*
 app.get('/redis', async function(req, res) {
   console.log("New request GET to /redis");
 
@@ -44,7 +47,7 @@ app.get('/redis', async function(req, res) {
     }
   });
 });
-
+*/
 
 
 const port = 3000;
